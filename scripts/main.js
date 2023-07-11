@@ -14,6 +14,8 @@ function clickMinefieldCreator() {
 
     const createdMinefield = minefieldCreator(difficulty);
 
+    minefieldOutput(minefieldElement, createdMinefield);
+
 }
 
 /**
@@ -37,6 +39,7 @@ function cellCreator (cellContent) {
 /**
  * Creates minefiled
  * @param {number} difficultyArgument Number of cells to put in minefield
+ * @returns {HTMLDivElement[]} Minefield as cells array
  */
 
 function minefieldCreator (difficultyArgument) {
@@ -58,11 +61,15 @@ function minefieldCreator (difficultyArgument) {
 /**
  * Adds minefield to Html
  * @param {HTMLDivElement} minefieldContainer 
- * @param {[]} cellList 
+ * @param {HTMLDivElement[]} cellList 
  */
 
 function minefieldOutput(minefieldContainer, cellList) {
 
+    for (let i = 0; i < cellList.length; i++) {
 
+        minefieldContainer.innerHTML += cellList[i];
+
+    }
 
 }
