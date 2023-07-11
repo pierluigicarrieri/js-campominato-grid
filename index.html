@@ -13,21 +13,27 @@
 
         <div class="container h-100 bg-secondary-subtle">
 
-            <div class="row justify-content-center">
+            <div class="row justify-content-center bg-info-subtle">
 
-                <div class="col-5 bg-info-subtle">
+                <div class="col-5">
 
-                    <h1 class="py-4 text-center">CAMPO MINATO</h1>
+                    <h1 class="py-4 text-center">MINEFIELD</h1>
 
                 </div>
 
-                <div class="col-5 d-flex justify-content-center align-items-center bg-info-subtle">
+                <div class="col-5 d-flex justify-content-center align-items-center">
 
-                    <select class="form-select w-50" aria-label="Default select example">
-                        <option value="1">Facile</option>
-                        <option value="2">Medio</option>
-                        <option value="3">Difficile</option>
+                    <select id="difficulty_selector" class="form-select w-50" aria-label="Default select example">
+                        <option value="100">Easy Skill</option>
+                        <option value="81">Medium Skill</option>
+                        <option value="49">Hard Skill</option>
                     </select>
+
+                </div>
+
+                <div class="col-5 py-4 m-auto text-center">
+
+                    <button id="minefield_creator" class="btn btn-outline-info">Play</button>
 
                 </div>
 
