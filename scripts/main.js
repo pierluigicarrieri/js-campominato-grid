@@ -1,4 +1,4 @@
-"use stict";
+"use strict";
 
 const difficultySelectorElement = document.getElementById("difficulty_selector");
 const minefieldCreatorElement = document.getElementById("minefield_creator");
@@ -48,7 +48,7 @@ function minefieldCreator (difficultyArgument) {
 
     for (let i = 0; i < difficultyArgument; i++) {
 
-        const createdCell = cellCreator(i);
+        const createdCell = cellCreator(i+1);
 
         minefield.push(createdCell);
 
@@ -68,7 +68,7 @@ function minefieldOutput(minefieldContainer, cellList) {
 
     for (let i = 0; i < cellList.length; i++) {
 
-        minefieldContainer.innerHTML += cellList[i];
+        minefieldContainer.append(cellList[i]);
 
     }
 
