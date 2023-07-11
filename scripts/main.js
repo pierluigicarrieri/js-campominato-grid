@@ -21,20 +21,28 @@ function clickMinefieldCreator() {
 /**
  * Creates a single minefield cell
  * @param {string} cellContent Content of the created cell
+ * @param {number} cellsPerRow How many cells on a single row
  * @returns {HTMLDivElement} Minefield cell
  */
 
-function cellCreator (cellContent, cellDimension) {
+function cellCreator (cellContent, cellsPerRow) {
 
     const cell = document.createElement("div");
 
     cell.classList.add("cell");
 
-    const cellsSingleRow = Math.sqrt(cellDimension);
+    const cellsSingleRow = Math.sqrt(cellsPerRow);
 
     cell.style.flexBasis = `calc(100% / ${cellsSingleRow})`;
 
     cell.innerHTML = cellContent;
+
+    cell.addEventListener("click", function() {
+
+        cell.classList.toggle("bg-info-subtle");
+        console.log(cellContent);
+    }
+    )
 
     return cell;
 
