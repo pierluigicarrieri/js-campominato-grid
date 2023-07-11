@@ -6,8 +6,9 @@ const minefieldElement = document.getElementById("minefield");
 
 minefieldCreatorElement.addEventListener("click", clickMinefieldCreator);
 
-
-
+/**
+ * Starts program when "Play" button is clicked
+ */
 function clickMinefieldCreator() {
 
     const difficulty = parseInt(difficultySelectorElement.value);
@@ -24,7 +25,6 @@ function clickMinefieldCreator() {
  * @param {number} cellsPerRow How many cells on a single row
  * @returns {HTMLDivElement} Minefield cell
  */
-
 function cellCreator (cellContent, cellsPerRow) {
 
     const cell = document.createElement("div");
@@ -53,7 +53,6 @@ function cellCreator (cellContent, cellsPerRow) {
  * @param {number} difficultyArgument Number of cells to put in minefield
  * @returns {HTMLDivElement[]} Minefield as cells array
  */
-
 function minefieldCreator (difficultyArgument) {
 
     const minefield = [];
@@ -75,7 +74,6 @@ function minefieldCreator (difficultyArgument) {
  * @param {HTMLDivElement} minefieldContainer 
  * @param {HTMLDivElement[]} cellList 
  */
-
 function minefieldOutput(minefieldContainer, cellList) {
 
     for (let i = 0; i < cellList.length; i++) {
