@@ -24,11 +24,15 @@ function clickMinefieldCreator() {
  * @returns {HTMLDivElement} Minefield cell
  */
 
-function cellCreator (cellContent) {
+function cellCreator (cellContent, cellDimension) {
 
     const cell = document.createElement("div");
 
     cell.classList.add("cell");
+
+    const cellsSingleRow = Math.sqrt(cellDimension);
+
+    cell.style.flexBasis = `calc(100% / ${cellsSingleRow})`;
 
     cell.innerHTML = cellContent;
 
@@ -48,7 +52,7 @@ function minefieldCreator (difficultyArgument) {
 
     for (let i = 0; i < difficultyArgument; i++) {
 
-        const createdCell = cellCreator(i+1);
+        const createdCell = cellCreator(i+1, difficultyArgument);
 
         minefield.push(createdCell);
 
